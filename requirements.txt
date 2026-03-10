@@ -2,3 +2,4 @@ crewai
 langchain_openai
 python-dotenv
 flask
+tiktoken==0.7.0
