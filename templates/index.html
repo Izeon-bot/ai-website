@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Assistant</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#343541;
+    margin:0;
+    color:white;
+}
+
+.header{
+    background:#202123;
+    color:white;
+    padding:15px;
+    font-size:20px;
+}
+
+.chat-container{
+    height:80vh;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.message{
+    max-width:700px;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:10px;
+    line-height:1.5;
+}
+
+.user{
+    background:#3b82f6;
+    margin-left:auto;
+}
+
+.ai{
+    background:#444654;
+}
+
+.input-area{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#40414f;
+    padding:15px;
+    border-top:1px solid #555;
+}
+
+input{
+    width:80%;
+    padding:10px;
+    font-size:16px;
+    background:#343541;
+    border:1px solid #555;
+    color:white;
+}
+
+input::placeholder{
+    color:#aaa;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    background:#10a37f;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d8f6f;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+AI Assistant
+</div>
+
+<div class="chat-container" id="chat">
+
+{% if question %}
+<div class="message user">
+{{ question }}
+</div>
+{% endif %}
+
+{% if answer %}
+<div class="message ai">
+{{ answer }}
+</div>
+{% endif %}
+
+</div>
+
+<div class="input-area">
+
+<form method="POST">
+
+<input
+type="text"
+name="question"
+placeholder="Ask anything..."
+required
+/>
+
+<button type="submit">Send</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
