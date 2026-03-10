@@ -1,5 +1,4 @@
-langgraph
-langchain
+crewai
 langchain_openai
 python-dotenv
 flask
